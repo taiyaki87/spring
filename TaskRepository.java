@@ -88,7 +88,7 @@ public class TaskRepository {
    */
   public int delete(int id) throws SQLException {
     //SQL文(Javaからの埋め込み部分は:変数名で指定する)
-    final String SQL_DELETE_ONE = "DELETE FROM taks_t WHERE id = :id";
+    final String SQL_DELETE_ONE = "DELETE FROM task_t WHERE id = :id";
 
     //クエリのパラメータを設定するマップ（キーはSQLの:変数名と合わせる
     Map<String, Object> params = new HashMap<String, Object>();
@@ -111,7 +111,7 @@ public class TaskRepository {
    */
   public int update(int id) throws SQLException {
     // SQL文(Javaからの埋め込み部分は:変数名で指定する)
-    final String SQL_UPDATE_ONE = "UPDATE task_t SET coplete =true WHERE id = :id";
+    final String SQL_UPDATE_ONE = "UPDATE task_t SET complete =true WHERE id = :id";
 
     //クエリのパラメータを設定するマップ（キーはSQLの:変数名と合わせる）
     Map<String, Object> params = new HashMap<String, Object>();
