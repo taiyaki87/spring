@@ -64,7 +64,7 @@ public class TaskRepository {
    */
   public int save(TaskData taskData) throws SQLException{
     //SQL文（Javaからの埋め込み部分は:変数名で指定する）
-    final String SQL_INSERT_ONE = "INSERT INTO task_t(id, user_id, title, limitday,complete) VALUES((SELECT COALESCE(MAX(id),0) +1 FROM task_k), :userId, :title, :limitday,false)";
+    final String SQL_INSERT_ONE = "INSERT INTO task_t(id, user_id, title, limitday,complete) VALUES((SELECT COALESCE(MAX(id),0) +1 FROM task_t), :userId, :title, :limitday,false)";
 
     //クエリのパラメータを設定するマップ（キーはSQLの:変数名と合わせる）
     Map<String, Object> params = new HashMap<String, Object>();
